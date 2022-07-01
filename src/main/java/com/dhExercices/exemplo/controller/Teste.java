@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/teste")
 public class Teste {
 
-    @GetMapping("/{nome}")
+    @GetMapping("olá/{nome}")
     public String digitaHello(@PathVariable String nome){
-        return "Ola" + nome;
+        return "Ola " + nome;
     }
 
-    @GetMapping("/{nome}/{id}")
-    public String  digaHello(@RequestParam String nome, int id){
-        return "Ola" + nome + ": " + id;
+    @GetMapping("/olá")
+    public String  digaHello(@RequestParam String nome, @RequestParam int id){
+        return "Ola " + nome + ": " + id;
     }
 
     @PostMapping
